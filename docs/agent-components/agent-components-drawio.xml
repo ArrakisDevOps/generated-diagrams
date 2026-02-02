@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxGraphModel grid="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="node1" value="&lt;font style='font-size: 20.0px;' face='Times,serif' color='white'&gt;Agent Core&lt;/font&gt;" style="verticalAlign=middle;html=1;rounded=0;labelBackgroundColor=none;strokeColor=none;fillColor=#8bc34a;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+      <mxGeometry x="139.25" y="132.0" width="130.75" height="36.0" as="geometry" />
+    </mxCell>
+    <mxCell id="node2" value="&lt;font style='font-size: 20.0px;' face='Times,serif' color='white'&gt;Memory&lt;br/&gt;Module&lt;/font&gt;" style="verticalAlign=middle;html=1;rounded=0;labelBackgroundColor=none;strokeColor=none;fillColor=#8bc34a;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+      <mxGeometry x="154.62" y="4.0" width="100.0" height="56.0" as="geometry" />
+    </mxCell>
+    <mxCell id="node3" value="&lt;font style='font-size: 20.0px;' face='Times,serif' color='white'&gt;Tool(s)&lt;/font&gt;" style="verticalAlign=middle;html=1;rounded=0;labelBackgroundColor=none;strokeColor=none;fillColor=#8bc34a;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+      <mxGeometry x="162.5" y="240.0" width="84.25" height="36.0" as="geometry" />
+    </mxCell>
+    <mxCell id="node5" value="&lt;font style='font-size: 20.0px;' face='Times,serif' color='white'&gt;Planning&lt;br/&gt;Module&lt;/font&gt;" style="verticalAlign=middle;html=1;rounded=0;labelBackgroundColor=none;strokeColor=none;fillColor=#8bc34a;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+      <mxGeometry x="306.0" y="122.0" width="106.0" height="56.0" as="geometry" />
+    </mxCell>
+    <mxCell id="node4" value="&lt;font style='font-size: 20.0px;' face='Times,serif' color='#000000'&gt;User&lt;br/&gt;Request&lt;/font&gt;" style="verticalAlign=middle;html=1;rounded=0;labelBackgroundColor=none;strokeColor=none;fillColor=white;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+      <mxGeometry x="4.0" y="122.0" width="99.25" height="56.0" as="geometry" />
+    </mxCell>
+    <mxCell id="edge1" style="html=1;endArrow=block;dashed=0;endFill=1;startArrow=block;startFill=1;fillColor=white;strokeColor=white;strokeWidth=1;rounded=0;exitX=0.3728;exitY=0.0000;entryX=0.3338;entryY=1.0000;" parent="1" edge="1" source="node1" target="node2">
+      <mxGeometry as="geometry" relative="1">
+        <mxPoint x="188.0" y="120.05000000000001" as="sourcePoint" />
+        <mxPoint x="188.0" y="71.93" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge3" style="html=1;endArrow=block;dashed=0;endFill=1;startArrow=block;startFill=1;fillColor=white;strokeColor=white;strokeWidth=1;rounded=0;exitX=0.6099;exitY=1.0000;entryX=0.6706;entryY=0.0000;" parent="1" edge="1" source="node1" target="node3">
+      <mxGeometry as="geometry" relative="1">
+        <mxPoint x="219.0" y="179.82999999999998" as="sourcePoint" />
+        <mxPoint x="219.0" y="228.07999999999998" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge6" style="html=1;endArrow=block;dashed=0;endFill=1;startArrow=block;startFill=1;fillColor=white;strokeColor=white;strokeWidth=1;rounded=0;exitX=1.0000;exitY=0.5000;entryX=0.0000;entryY=0.5000;" parent="1" edge="1" source="node1" target="node5">
+      <mxGeometry as="geometry" relative="1">
+        <mxPoint x="281.61" y="150.0" as="sourcePoint" />
+        <mxPoint x="294.06" y="150.0" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge5" style="html=1;endArrow=block;dashed=0;endFill=1;startArrow=block;startFill=1;fillColor=white;strokeColor=white;strokeWidth=1;rounded=0;exitX=1.0000;exitY=0.5000;entryX=0.0000;entryY=0.5000;" parent="1" edge="1" source="node4" target="node1">
+      <mxGeometry as="geometry" relative="1">
+        <mxPoint x="115.0" y="150.0" as="sourcePoint" />
+        <mxPoint x="127.41" y="150.0" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

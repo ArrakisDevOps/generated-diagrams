@@ -1,0 +1,9 @@
+graph TD
+(User):::node_User <>>(Core)
+(Memory) -->(Core)
+(Core) -->(Tools)
+(Core) <>>(Memory)
+(Core) <>>(Tools)
+(Core) <>>(Planning)
+class node_edge fill:white,stroke:white
+class node_User fill:transparent fillcolor=white fontcolor=black fontsize=20 shape=rectangle style=filled,stroke:transparent fillcolor=white fontcolor=black fontsize=20 shape=rectangle style=filled
