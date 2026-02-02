@@ -1,0 +1,19 @@
+graph LR
+User["User Request"]
+
+subgraph a[ ]
+    Memory <--> Core
+    Core["Agent Core"] <--> Tools["Tool(s)"]
+    User <--> Core 
+end
+
+Core <--> Planning["Planning Module"]
+
+%% Styling
+classDef node_User fill:#fff,stroke:#000,color:#000,stroke-width:1px;
+classDef node_Core fill:#8BC34A,stroke:#8BC34A,color:#fff,stroke-width:1px;
+classDef node_Module fill:#8BC34A,stroke:#8BC34A,color:#fff,stroke-width:1px;
+
+class User node_User;
+class Core node_Core;
+class Memory,Planning,Tools node_Module;
