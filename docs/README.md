@@ -7,8 +7,10 @@
 .
 ├── agent-components
 ├── multi-agent-orchestrator
-└── more-to-come...
-3 directories
+├── multi-agent-router
+└── prompt-chaining
+
+5 directories
 ```
 
 > **_NOTE:_** See separate README.md in each folders.

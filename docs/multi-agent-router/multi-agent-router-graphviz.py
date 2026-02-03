@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# multi-agent-orchestrator-graphviz.py
+# multi-agent-router-graphviz.py
 #
 # Script generates a small diagram for AWS meetup presentation.
 #
@@ -9,7 +9,7 @@
 from graphviz import Digraph
 
 dot = Digraph(
-    "Multi Agent Orchestrator",
+    "Multi Agent Router",
     graph_attr={
         # "splines": "ortho",
         "nodesep": "1.0",
@@ -42,25 +42,21 @@ white_style = {
 }
 
 with dot.subgraph() as o:
-    o.node("orc", "Orchestrator", **green_style)
-    o.edge("orc", "w1")
-    o.edge("orc", "w2")
-    o.edge("orc", "w3")
+    o.node("orc", "Router", **green_style)
+    o.edge("orc", "l1")
 
 with dot.subgraph() as w:
     w.attr(rank='same')
-    w.node('w1', "Worker", **green_style)
-    w.node('w2', "Worker", **green_style)
-    w.node('w3', "Worker", **green_style)
-    w.edge('w1', 'w2', style='invis')
-    w.edge('w2', 'w3', style='invis')
+    w.node('l1', "LLM", **green_style)
+    w.node('l2', "LLM", **green_style)
+    w.node('l3', "LLM", **green_style)
+    w.edge('l1', 'l2', style='invis')
+    w.edge('l2', 'l3', style='invis')
 
 
 with dot.subgraph() as s:
-    s.node("syn", "Synthesizer", **green_style)
-    s.edge("w1", "syn")
-    s.edge("w2", "syn")
-    s.edge("w3", "syn")
+    s.node("out", "Output", **green_style)
+    s.edge("l1", "out")
 
 # Render the diagram
-dot.render("multi-agent-orchestrator-graphviz", view=True)
+dot.render("multi-agent-router-graphviz", view=True)

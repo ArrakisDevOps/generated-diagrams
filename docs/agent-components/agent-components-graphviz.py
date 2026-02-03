@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+#
+# agent-components-graphviz.py
+#
+# Script generates a small diagram for AWS meetup presentation.
+#
+# pylint: disable=pointless-statement, expression-not-assigned
+
 from graphviz import Digraph
 
 dot = Digraph(

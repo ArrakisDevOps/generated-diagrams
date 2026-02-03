@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# multi-agent-orchestrator-graphviz.py
+# prompt-chaining-graphviz.py
 #
 # Script generates a small diagram for AWS meetup presentation.
 #
@@ -9,7 +9,7 @@
 from graphviz import Digraph
 
 dot = Digraph(
-    "Multi Agent Orchestrator",
+    "Prompt Chaining Diagram",
     graph_attr={
         # "splines": "ortho",
         "nodesep": "1.0",
@@ -32,35 +32,29 @@ green_style = {
     "shape": "rectangle",
     "color": "transparent",
 }
-white_style = {
+red_style = {
     "style": "filled",
-    "fillcolor": "white",
+    "fillcolor": "red",
     "fontcolor": "black",
     "fontsize": "20",
     "shape": "rectangle",
     "color": "transparent",
 }
 
-with dot.subgraph() as o:
-    o.node("orc", "Orchestrator", **green_style)
-    o.edge("orc", "w1")
-    o.edge("orc", "w2")
-    o.edge("orc", "w3")
-
-with dot.subgraph() as w:
-    w.attr(rank='same')
-    w.node('w1', "Worker", **green_style)
-    w.node('w2', "Worker", **green_style)
-    w.node('w3', "Worker", **green_style)
-    w.edge('w1', 'w2', style='invis')
-    w.edge('w2', 'w3', style='invis')
-
-
+dot.node("input", "Input", **green_style)
+dot.node('l1', "LLM 1", **green_style)
+dot.node('l2', "LLM 2", **green_style)
+dot.node("l3", "LLM 3", **green_style)
+dot.edge("input", "l1")
+dot.edge("l1", "l2")
+dot.edge("l2", "g")
+dot.edge("g", "l3")
 with dot.subgraph() as s:
-    s.node("syn", "Synthesizer", **green_style)
-    s.edge("w1", "syn")
-    s.edge("w2", "syn")
-    s.edge("w3", "syn")
+    s.attr(rank='same')
+    s.node('g', "Gate", **green_style)
+    s.node('f', "Fail", **red_style)
+    s.edge("g", "f")
+
 
 # Render the diagram
-dot.render("multi-agent-orchestrator-graphviz", view=True)
+dot.render("prompt-chaining-graphviz", view=True)

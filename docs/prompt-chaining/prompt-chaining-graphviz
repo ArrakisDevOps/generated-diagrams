@@ -1,0 +1,21 @@
+digraph "Prompt Chaining Diagram" {
+	graph [nodesep=1.0]
+	bgcolor=transparent
+	edge [color=white]
+	rankdir=LR
+	node [shape=rectangle]
+	input [label=Input color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+	l1 [label="LLM 1" color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+	l2 [label="LLM 2" color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+	l3 [label="LLM 3" color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+	input -> l1
+	l1 -> l2
+	l2 -> g
+	g -> l3
+	{
+		rank=same
+		g [label=Gate color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		f [label=Fail color=transparent fillcolor=red fontcolor=black fontsize=20 shape=rectangle style=filled]
+		g -> f
+	}
+}
