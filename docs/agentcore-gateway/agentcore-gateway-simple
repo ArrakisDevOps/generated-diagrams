@@ -1,0 +1,46 @@
+digraph "AgentCore Gateway Simple" {
+	graph [bgcolor="#0f0f23" fontname=Arial nodesep=1.5 pad=0.8 rankdir=LR ranksep=2.0 splines=ortho]
+	agent [label=Agent color="#8b5cf6" fillcolor="#312e81" fontcolor=white fontname=Arial fontsize=14 penwidth=3 shape=ellipse style=filled]
+	gateway [label="🧠
+AgentCore
+Gateway" color="#8b5cf6" fillcolor="#4c1d95" fontcolor=white fontname="Arial Bold" fontsize=16 height=2.5 penwidth=4 shape=ellipse style=filled width=3.5]
+	api_endpoint [label="API Endpoint" color="#ef4444" fillcolor="#7f1d1d" fontcolor=white fontname=Arial fontsize=14 penwidth=3 shape=ellipse style=filled]
+	mcp_server [label="MCP Server" color="#3b82f6" fillcolor="#1e3a8a" fontcolor=white fontname=Arial fontsize=14 penwidth=3 shape=ellipse style=filled]
+	aws_lambda [label="AWS Lambda" color="#10b981" fillcolor="#14532d" fontcolor=white fontname=Arial fontsize=14 penwidth=3 shape=ellipse style=filled]
+	smithy_model [label="Smithy Model" color="#fbbf24" fillcolor="#92400e" fontcolor=white fontname=Arial fontsize=14 penwidth=3 shape=ellipse style=filled]
+	tool1 [label=Tool color="#6b7280" fillcolor="#374151" fontcolor=white fontname=Arial fontsize=12 penwidth=2 shape=ellipse style=filled]
+	tool2 [label=Tool color="#6b7280" fillcolor="#374151" fontcolor=white fontname=Arial fontsize=12 penwidth=2 shape=ellipse style=filled]
+	tool3 [label=Tool color="#6b7280" fillcolor="#374151" fontcolor=white fontname=Arial fontsize=12 penwidth=2 shape=ellipse style=filled]
+	tool4 [label=Tool color="#6b7280" fillcolor="#374151" fontcolor=white fontname=Arial fontsize=12 penwidth=2 shape=ellipse style=filled]
+	{
+		rank=same
+		agent
+	}
+	{
+		rank=same
+		gateway
+	}
+	{
+		rank=same
+		api_endpoint
+		mcp_server
+		aws_lambda
+		smithy_model
+	}
+	{
+		rank=same
+		tool1
+		tool2
+		tool3
+		tool4
+	}
+	agent -> gateway [arrowhead=vee color=white penwidth=3]
+	gateway -> api_endpoint [arrowhead=vee color=white penwidth=2]
+	gateway -> mcp_server [arrowhead=vee color=white penwidth=2]
+	gateway -> aws_lambda [arrowhead=vee color=white penwidth=2]
+	gateway -> smithy_model [arrowhead=vee color=white penwidth=2]
+	api_endpoint -> tool1 [arrowhead=vee color=white penwidth=2]
+	mcp_server -> tool2 [arrowhead=vee color=white penwidth=2]
+	aws_lambda -> tool3 [arrowhead=vee color=white penwidth=2]
+	smithy_model -> tool4 [arrowhead=vee color=white penwidth=2]
+}
