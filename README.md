@@ -1,2 +1,2 @@
-# FromSolo2Squad
-From Solo to Squad: Unleashing Multi-Agent AI Power on AWS
+# Generated diagrams
+Repository holds a python code or tool generated diagrams as examples for reusability. 
