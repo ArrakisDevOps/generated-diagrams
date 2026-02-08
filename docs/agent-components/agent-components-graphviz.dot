@@ -1,0 +1,28 @@
+digraph "Agent Components" {
+	graph [nodesep=1.0 splines=ortho]
+	bgcolor=transparent
+	edge [color=white]
+	rankdir=LR
+	node [shape=rectangle]
+	{
+		User [label="User
+Request" color=transparent fillcolor=white fontcolor=black fontsize=20 shape=rectangle style=filled]
+		User -> Core [dir=both]
+	}
+	{
+		rank=same
+		Memory [label="Memory
+Module" color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		Core [label="Agent Core" color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		Tools [label="Tool(s)" color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		Memory -> Core [style=invis]
+		Core -> Tools [style=invis]
+		Core -> Memory [dir=both]
+		Core -> Tools [dir=both]
+	}
+	{
+		Planning [label="Planning
+Module" color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 rank=same shape=rectangle style=filled]
+		Core -> Planning [dir=both]
+	}
+}

@@ -1,0 +1,27 @@
+digraph "Multi Agent Orchestrator" {
+	graph [nodesep=1.0]
+	bgcolor=transparent
+	edge [color=white]
+	rankdir=LR
+	node [shape=rectangle]
+	{
+		orc [label=Orchestrator color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		orc -> w1
+		orc -> w2
+		orc -> w3
+	}
+	{
+		rank=same
+		w1 [label=Worker color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		w2 [label=Worker color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		w3 [label=Worker color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		w1 -> w2 [style=invis]
+		w2 -> w3 [style=invis]
+	}
+	{
+		syn [label=Synthesizer color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		w1 -> syn
+		w2 -> syn
+		w3 -> syn
+	}
+}

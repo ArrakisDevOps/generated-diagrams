@@ -1,0 +1,104 @@
+digraph "AgentCore Gateway" {
+	graph [bgcolor="#0f0f23" fontcolor=white fontname=Arial fontsize=28 margin=0.5 nodesep=1.0 pad=0.5 rankdir=LR ranksep=1.5 splines=ortho]
+	title [label="🧠 AgentCore Gateway" fontcolor=white fontname="Arial Bold" fontsize=36 style=invis]
+	apis_label [label="APIs, tools, resources" fontcolor="#8b5cf6" fontname=Arial fontsize=18 style=invis]
+	agent_icon [label=Agent color="#8b5cf6" fillcolor=black fontcolor=white fontname=Arial fontsize=14 penwidth=2 shape=box style="filled,rounded"]
+	mcp_icon [label="📋 MCP" fontcolor="#9ca3af" fontname="Arial Bold" fontsize=16 style=invis]
+	mcp_actions [label="List tools,
+Invoke tool,
+Search" fontcolor="#9ca3af" fontname=Arial fontsize=14 style=invis]
+	gateway [label="🧠
+
+AgentCore
+Gateway" color="#8b5cf6" fillcolor=black fontcolor=white fontname="Arial Bold" fontsize=20 height=4.5 penwidth=4 shape=box style="filled,rounded" width=3.0]
+	api_endpoint [label="API Endpoint" color="#ef4444" fillcolor=black fontcolor=white fontname=Arial fontsize=16 penwidth=3 shape=box style="filled,rounded"]
+	mcp_server [label="MCP Server" color="#3b82f6" fillcolor=black fontcolor=white fontname=Arial fontsize=16 penwidth=3 shape=box style="filled,rounded"]
+	aws_lambda [label="AWS Lambda" color="#10b981" fillcolor=black fontcolor=white fontname=Arial fontsize=16 penwidth=3 shape=box style="filled,rounded"]
+	smithy_model [label="Smithy Model" color="#fbbf24" fillcolor=black fontcolor=white fontname=Arial fontsize=16 penwidth=3 shape=box style="filled,rounded"]
+	tool1 [label=Tool color="#6b7280" fillcolor=black fontcolor=white fontname=Arial fontsize=14 penwidth=2 shape=box style="filled,rounded"]
+	tool2 [label=Tool color="#6b7280" fillcolor=black fontcolor=white fontname=Arial fontsize=14 penwidth=2 shape=box style="filled,rounded"]
+	tool3 [label=Tool color="#6b7280" fillcolor=black fontcolor=white fontname=Arial fontsize=14 penwidth=2 shape=box style="filled,rounded"]
+	tool4 [label=Tool color="#6b7280" fillcolor=black fontcolor=white fontname=Arial fontsize=14 penwidth=2 shape=box style="filled,rounded"]
+	restful_desc [label="RESTful services" fontcolor="#9ca3af" fontname=Arial fontsize=14 style=invis]
+	mcp_desc [label="MCP servers" fontcolor="#9ca3af" fontname=Arial fontsize=14 style=invis]
+	lambda_desc [label="AWS Lambda functions" fontcolor="#9ca3af" fontname=Arial fontsize=14 style=invis]
+	smithy_desc [label="Smithy model servers" fontcolor="#9ca3af" fontname=Arial fontsize=14 style=invis]
+	benefit1_title [label="Time to value" fontcolor="#8b5cf6" fontname="Arial Bold" fontsize=16 style=invis]
+	benefit1_desc [label="Simplify access to
+existing APIs, data" fontcolor="#9ca3af" fontname=Arial fontsize=13 style=invis]
+	benefit2_title [label=Secure fontcolor="#8b5cf6" fontname="Arial Bold" fontsize=16 style=invis]
+	benefit2_desc [label="Inbound, outbound auth,
+access control" fontcolor="#9ca3af" fontname=Arial fontsize=13 style=invis]
+	benefit3_title [label=Serverless fontcolor="#8b5cf6" fontname="Arial Bold" fontsize=16 style=invis]
+	benefit3_desc [label="Scales on demand,
+no infra management" fontcolor="#9ca3af" fontname=Arial fontsize=13 style=invis]
+	benefit4_title [label="Built-in tool search" fontcolor="#8b5cf6" fontname="Arial Bold" fontsize=16 style=invis]
+	benefit4_desc [label="Tools automatically indexed
+and searchable" fontcolor="#9ca3af" fontname=Arial fontsize=13 style=invis]
+	{
+		rank=min
+		title
+		apis_label
+	}
+	{
+		rank=same
+		agent_icon
+		mcp_icon
+		mcp_actions
+	}
+	{
+		rank=same
+		gateway
+	}
+	{
+		rank=same
+		api_endpoint
+		mcp_server
+		aws_lambda
+		smithy_model
+	}
+	{
+		rank=same
+		tool1
+		tool2
+		tool3
+		tool4
+	}
+	{
+		rank=same
+		restful_desc
+		mcp_desc
+		lambda_desc
+		smithy_desc
+	}
+	{
+		rank=max
+		benefit1_title
+		benefit1_desc
+		benefit2_title
+		benefit2_desc
+		benefit3_title
+		benefit3_desc
+		benefit4_title
+		benefit4_desc
+	}
+	agent_icon -> gateway [arrowhead=vee arrowsize=1.0 color=white penwidth=3]
+	gateway -> api_endpoint [arrowhead=vee arrowsize=1.0 color=white penwidth=3]
+	gateway -> mcp_server [arrowhead=vee arrowsize=1.0 color=white penwidth=3]
+	gateway -> aws_lambda [arrowhead=vee arrowsize=1.0 color=white penwidth=3]
+	gateway -> smithy_model [arrowhead=vee arrowsize=1.0 color=white penwidth=3]
+	api_endpoint -> tool1 [arrowhead=vee arrowsize=0.8 color=white penwidth=2]
+	mcp_server -> tool2 [arrowhead=vee arrowsize=0.8 color=white penwidth=2]
+	aws_lambda -> tool3 [arrowhead=vee arrowsize=0.8 color=white penwidth=2]
+	smithy_model -> tool4 [arrowhead=vee arrowsize=0.8 color=white penwidth=2]
+	mcp_icon -> agent_icon [style=invis]
+	mcp_actions -> mcp_icon [style=invis]
+	tool1 -> restful_desc [style=invis]
+	tool2 -> mcp_desc [style=invis]
+	tool3 -> lambda_desc [style=invis]
+	tool4 -> smithy_desc [style=invis]
+	benefit1_title -> benefit1_desc [style=invis]
+	benefit2_title -> benefit2_desc [style=invis]
+	benefit3_title -> benefit3_desc [style=invis]
+	benefit4_title -> benefit4_desc [style=invis]
+}

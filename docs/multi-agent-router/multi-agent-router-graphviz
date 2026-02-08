@@ -1,0 +1,23 @@
+digraph "Multi Agent Router" {
+	graph [nodesep=1.0]
+	bgcolor=transparent
+	edge [color=white]
+	rankdir=LR
+	node [shape=rectangle]
+	{
+		orc [label=Router color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		orc -> l1
+	}
+	{
+		rank=same
+		l1 [label=LLM color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		l2 [label=LLM color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		l3 [label=LLM color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		l1 -> l2 [style=invis]
+		l2 -> l3 [style=invis]
+	}
+	{
+		out [label=Output color=transparent fillcolor="#8BC34A" fontcolor=white fontsize=20 shape=rectangle style=filled]
+		l1 -> out
+	}
+}
